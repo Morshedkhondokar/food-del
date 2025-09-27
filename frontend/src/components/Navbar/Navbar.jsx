@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="p-4 flex justify-between items-center">
       <img src={assets.logo} alt="logo" className="w-[125px]" />
-      <ul className="flex gap-8 text-xl text-[#49557e] outfit_font">
+      <ul className="hidden md:flex gap-8 text-xl text-[#49557e] outfit_font ">
         <li>
           <NavLink to={"/"}>Home</NavLink>
         </li>
