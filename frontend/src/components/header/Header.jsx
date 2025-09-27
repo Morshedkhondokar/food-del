@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className='relative h-[40vh] rounded-xl md:h-[38vw] m-3 bg-[url("/header_img.png")] bg-contain md:bg-cover bg-no-repeat '>
+    <div className='relative min-h-[40vh] md:h-[38vw] rounded-xl  m-3 bg-[url("/header_img.png")] bg-contain md:bg-cover bg-no-repeat '>
       <div className="absolute flex flex-col items-start gap-[1.5vw] max-w-[51%] bottom-[30%] md:bottom-[10%] left-[7.8vw] animate__animated animate__fadeIn">
         <h2 className="font-medium text-[5.5vw]  leading-tight text-white ">
           Order your favourite food here

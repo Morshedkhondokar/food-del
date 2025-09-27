@@ -1,40 +1,43 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Home from './pages/Home/Home.jsx';
-import Menu from './pages/Menu.jsx';
-import Cart from './pages/Cart/Cart.jsx';
-import PlaceOrder from './pages/PlaceOrder/PlaceOrder.jsx';
+import Home from "./pages/Home/Home.jsx";
+import Menu from "./pages/Menu.jsx";
+import Cart from "./pages/Cart/Cart.jsx";
+import PlaceOrder from "./pages/PlaceOrder/PlaceOrder.jsx";
+import StoreContextProvider from "./components/provider/StoreContextProvider.jsx";
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <App/>,
+    path: "/",
+    element: <App />,
     children: [
       {
-        path:'/',
-        element: <Home/>
+        path: "/",
+        element: <Home />,
       },
       {
-        path:'/menu',
-        element: <Menu/>
+        path: "/menu",
+        element: <Menu />,
       },
       {
-        path:"/cart",
-        element: <Cart/>
+        path: "/cart",
+        element: <Cart />,
       },
       {
-        path:"/order",
-        element: <PlaceOrder/>
-      }
-    ]
-  }
-])
+        path: "/order",
+        element: <PlaceOrder />,
+      },
+    ],
+  },
+]);
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-   <RouterProvider router={router}/>
-  </StrictMode>,
-)
+    <StoreContextProvider>
+      <RouterProvider router={router} />
+    </StoreContextProvider>
+  </StrictMode>
+);
